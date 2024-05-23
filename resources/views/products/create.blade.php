@@ -32,6 +32,11 @@
         <input type="number" name="stock" value="{{ $product->stock ?? '' }}" required>
     </div>
 
+    <div>
+        <label for="image">Imagem</label>
+        <input type="string" name="image" value="{{ $product->image ?? '' }}"required>
+    </div>
+
     <button type="submit">{{ isset($product) ? 'Update' : 'Add' }} Produto</button>
 </form>
 

@@ -1,4 +1,3 @@
-@extends('layout.app')
 
 @section('content')
     <h1>Pagina não encontrada</h1>
