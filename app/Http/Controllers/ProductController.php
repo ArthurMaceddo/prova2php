@@ -34,7 +34,10 @@ class ProductController extends Controller
         'description' => 'required',
         'price' => 'required|numeric',
         'stock' => 'required|integer',
+        'image' => 'required',
        ]);
+
+       \Log::info($request->all());
 
        Product::create($request->all());
        return redirect()->route('products.index');
@@ -53,7 +56,8 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-       return view('product.edit', compact('product'));
+        $product = Product::findOrFail($id);
+       return view('products.edit', compact('product'));
     }
 
     /**
@@ -61,6 +65,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'stock' => 'required|integer',
+            'image' => 'required',
+        ]);
+        
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
         return redirect()->route('products.index');
     }
 
@@ -69,7 +83,8 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-       $product->delete();
+        $product = Product::findOrFail($id);
+        $product->delete();
        return redirect()->route('products.index');
     }
 }
