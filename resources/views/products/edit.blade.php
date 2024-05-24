@@ -34,7 +34,7 @@
 
     <div>
         <label for="image">Imagem</label>
-        <label type="text" name="image" value="{{ $product->image ?? '' }}"required>
+        <input type="string" name="image" value="{{ $product->image ?? '' }}"required>
     </div>
 
     <button type="submit">{{ isset($product) ? 'Update' : 'Add' }} Produto</button>

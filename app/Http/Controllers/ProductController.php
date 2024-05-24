@@ -34,7 +34,7 @@ class ProductController extends Controller
         'description' => 'required',
         'price' => 'required|numeric',
         'stock' => 'required|integer',
-        'image' => 'required',
+        'image' => 'required|url',
        ]);
 
        \Log::info($request->all());
@@ -70,7 +70,7 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'image' => 'required',
+            'image' => 'required|url',
         ]);
         
         $product = Product::findOrFail($id);

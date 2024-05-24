@@ -9,6 +9,7 @@
                 <th>Descrição</th>
                 <th>Preço</th>
                 <th>Estoque</th>
+                <th>Imagem</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->stock }}</td>
+                    <td> <img src="{{ $product->image }}" alt="{{ $product->name }}"></td>
                     <td>
                         <a href="{{ route('products.edit', $product) }}">Edit</a>
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display: inline;">
