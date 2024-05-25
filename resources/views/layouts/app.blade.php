@@ -15,7 +15,7 @@
                 <li><a href="{{ route ('home') }}"> Home</a></li>
                 <li><a href="{{ route ('products.index') }}"> Produtos</a></li>
                 <li><a href="{{ route ('products.create') }}"> Adicionar Produto</a></li>
-                <li><a href="{{ route ('contact')}}">Contato</a></li>
+                <li><a href="{{ route ('components.contactform')}}">Contato</a></li>    
             </ul>
         </nav>
     </header>
