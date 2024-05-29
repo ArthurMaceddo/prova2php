@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactformController extends Controller
 {
     public function show()
     { 
         var_dump($_POST); 
-        return view('components.contactform'); 
+        return view('contact'); 
     }
 
     public function submitForm(Request $request)

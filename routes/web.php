@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::resource('products', ProductController::class);
 
-Route::post('/contact',[App\http\Controllers\ContactController::class, 'submitForm'])->name('site.contact');
+Route::post('/contact',[App\http\Controllers\ContactformController::class, 'submitForm'])->name('site.contact');
 Route::get('/contact', [App\http\Controllers\ContactformController::class, 'show'])->name('components.contactform');
 
 Route::fallback(function () {
