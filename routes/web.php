@@ -9,8 +9,8 @@ Route::get('/', function () {
 
 Route::resource('products', ProductController::class);
 
-Route::get('/contact', [ContactFormController::class, 'show'])->name('components.contactform');
-Route::post('/contact',[\App\http\Controllers\ContactController::class, 'contact'])->name('site.contact');
+Route::post('/contact',[App\http\Controllers\ContactController::class, 'submitForm'])->name('site.contact');
+Route::get('/contact', [App\http\Controllers\ContactformController::class, 'show'])->name('components.contactform');
 
 Route::fallback(function () {
     return view('404');

@@ -1,4 +1,5 @@
-<form action= {{ route('site.contact')}} method="post">
+
+<form action="{{ route('site.contact') }}" method="post">
     @csrf
     <input name="name" type="text" placeholder="Nome" class="">
     <br>
@@ -8,12 +9,13 @@
     <br>
     <select name="reason" class="">
         <option value="">Qual o motivo do contato?</option>
-        <option value="1">Duvida</option>
+        <option value="1">Dúvida</option>
         <option value="2">Elogio</option>
         <option value="3">Reclamação</option>
     </select>
     <br>
-    <textarea name="message" class=""> Preencha aqui a sua mensagem</textarea>
+    <textarea name="message" class="" placeholder="Preencha aqui a sua mensagem"></textarea>
     <br>
     <button type="submit" class="">Enviar</button>
 </form>
+
