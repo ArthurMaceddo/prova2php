@@ -9,18 +9,22 @@
 </head>
 <body>
     <header> 
-        <img src="{{ asset('images/logo.png')}}" alt="Fashion Store Logo">
+        <img src="{{ asset('images/logo.png') }}" alt="Fashion Store Logo">
         <nav>
             <ul>
-                <li><a href="{{ route ('home') }}"> Home</a></li>
-                <li><a href="{{ route ('products.index') }}"> Produtos</a></li>
-                <li><a href="{{ route ('products.create') }}"> Adicionar Produto</a></li>
-                <li><a href="{{ route ('components.contactform')}}">Contato</a></li>    
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('products.index') }}">Produtos</a></li>
+                <li><a href="{{ route('products.create') }}">Adicionar Produto</a></li>
+                <li><a href="{{ route('components.contactform') }}">Contato</a></li>       
             </ul>
         </nav>
     </header>
-    <div class = "container">
+    <div class="container">
         @yield('content')
     </div>
+    <footer>
+        
+    </footer>
+    @yield('scripts')
 </body>
 </html>

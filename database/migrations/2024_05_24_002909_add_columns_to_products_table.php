@@ -13,7 +13,7 @@ class AddColumnsToProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 8, 2);
@@ -25,12 +25,10 @@ class AddColumnsToProductsTable extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * 
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn(['name', 'description', 'price', 'stock', 'image']);
-        });
+        Schema::dropIfExists('products');
     }
-}
+};
